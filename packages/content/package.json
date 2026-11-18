@@ -4,7 +4,10 @@
   "private": true,
   "license": "MIT",
   "type": "module",
-  "exports": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./game-data": "./src/game-data.ts"
+  },
   "dependencies": {
     "ajv": "8.20.0",
     "@pestouille/engine": "0.1.0"

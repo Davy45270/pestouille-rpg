@@ -1,4 +1,4 @@
-# Repris d'echecs-kid (.woodpecker/checks.yml) ; pas encore de build web : le premier jalon est le moteur.
+# Repris d'echecs-kid (.woodpecker/checks.yml).
 labels:
   host: tank01
 
@@ -26,6 +26,11 @@ steps:
     image: *node
     commands:
       - npm test
+  - name: build
+    image: *node
+    commands:
+      - npm run build
+      - echo "empreinte dist $(cd dist && find . -type f -print0 | LC_ALL=C sort -z | xargs -0 sha256sum | sha256sum | cut -d' ' -f1)"
   - name: sbom et audit
     image: *node
     commands:

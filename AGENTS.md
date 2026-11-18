@@ -15,8 +15,15 @@ la conception détaillée et les plans de travail sont tenus hors de ce dépôt.
   fichiers suivis (`tests/unit/brand-guard.test.ts`). Personnages, textes et images originaux.
 - **Réutiliser d'abord** : avant un composant non trivial, une fiche `docs/reuse-decisions/<composant>.md`
   (au moins deux candidats, licence, choix).
-- **Dépendances** : aucune d'exécution hors `ajv` (`packages/content`). Licence MIT ; aucune dépendance GPL, AGPL,
+- **Dépendances** : d'exécution, seulement `ajv` (`packages/content`) et `phaser` (rendu de l'interface `web/`, jamais
+  dans le moteur). Licence MIT ; aucune dépendance GPL, AGPL,
   LGPL, CC BY-SA ou SSPL.
+
+## Sprites
+
+Source texte : `art/sprites.lua`, dessinée par code et exportée par Aseprite (`art/build-art.sh`) vers
+`public/assets/atlas.png|json` et `public/icons/`. Les sorties sont versionnées ; l'outil ne l'est jamais (licence
+d'Aseprite : compilé hors dépôt, non redistribuable). Personnages originaux : Pestouille garde son look d'Opencade.
 
 ## Tests : ciblés, jamais la suite complète
 
@@ -28,4 +35,5 @@ Message en français terminé par la ligne `Co-Authored-By` de l'agent. Jamais `
 
 ## CI
 
-Woodpecker : `.woodpecker/checks.yml` (npm ci, lint, typecheck, tests, SBOM CycloneDX, audit des dépendances).
+Woodpecker : `.woodpecker/checks.yml` (npm ci, lint, typecheck, tests, build, SBOM CycloneDX, audit des
+dépendances), puis `.woodpecker/e2e.yml` (Playwright : parcours complet au clavier et au doigt, hors ligne).

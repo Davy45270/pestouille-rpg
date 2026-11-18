@@ -13,17 +13,29 @@
     "packages/*"
   ],
   "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint --max-warnings=0",
     "test": "vitest run --pool=threads --maxWorkers=2",
+    "test:e2e": "playwright test",
     "sbom": "npm sbom --sbom-format cyclonedx --omit dev"
   },
   "devDependencies": {
+    "@playwright/test": "1.65.1",
     "@types/node": "26.6.6",
     "fast-check": "4.10.3",
     "oxlint": "1.92.0",
     "oxlint-tsgolint": "7.0.2006",
     "typescript": "7.0.2",
+    "vite": "8.3.6",
+    "vite-plugin-pwa": "2.0.0",
     "vitest": "5.1.0"
+  },
+  "dependencies": {
+    "@pestouille/content": "0.1.0",
+    "@pestouille/engine": "0.1.0",
+    "phaser": "4.2.1"
   }
 }
