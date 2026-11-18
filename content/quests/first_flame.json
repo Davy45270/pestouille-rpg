@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "id": "first_flame",
+  "title": "La première flamme",
+  "steps": ["meet_lila", "meet_borin", "meet_nox", "recruit_mossling", "solve_blocks", "solve_switches", "find_root_key", "defeat_roncier", "claim_first_flame"],
+  "rewards": { "xp": 180, "items": ["first_flame"] }
+}

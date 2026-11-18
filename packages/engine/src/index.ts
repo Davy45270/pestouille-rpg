@@ -4,3 +4,4 @@ export * from './types.ts';
 export * from './combat.ts';
 export * from './boss.ts';
 export * from './recruit.ts';
+export * from './quests.ts';
