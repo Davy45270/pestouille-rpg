@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "first_flame",
+  "regions": {
+    "village": [
+      "place",
+      "home",
+      "clinic",
+      "forge",
+      "inn",
+      "forest_gate"
+    ],
+    "forest": [
+      "entry",
+      "glade",
+      "spring",
+      "camp",
+      "temple_gate"
+    ],
+    "temple": [
+      "hall",
+      "blocks",
+      "switches",
+      "key",
+      "antechamber",
+      "boss"
+    ]
+  },
+  "transitions": [
+    [
+      "village.forest_gate",
+      "forest.entry"
+    ],
+    [
+      "forest.temple_gate",
+      "temple.hall"
+    ],
+    [
+      "temple.hall",
+      "temple.blocks"
+    ],
+    [
+      "temple.blocks",
+      "temple.switches"
+    ],
+    [
+      "temple.switches",
+      "temple.key"
+    ],
+    [
+      "temple.key",
+      "temple.antechamber"
+    ],
+    [
+      "temple.antechamber",
+      "temple.boss"
+    ]
+  ],
+  "gates": [
+    {
+      "target": "temple.hall",
+      "requires": "party_four"
+    },
+    {
+      "target": "temple.antechamber",
+      "requires": "root_key"
+    }
+  ],
+  "checkpoints": [
+    "village.place",
+    "forest.camp",
+    "temple.antechamber"
+  ],
+  "start": "village.place",
+  "grants": {
+    "village.place": "party_four",
+    "temple.key": "root_key"
+  }
+}
