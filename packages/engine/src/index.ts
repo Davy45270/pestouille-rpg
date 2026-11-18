@@ -9,3 +9,6 @@ export * from './world.ts';
 export * from './progression.ts';
 export * from './inventory.ts';
 export * from './ai.ts';
+export * from './puzzles.ts';
+export * from './game.ts';
+export * from './save.ts';

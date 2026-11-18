@@ -6,6 +6,7 @@
   "type": "module",
   "exports": "./src/index.ts",
   "dependencies": {
-    "ajv": "8.20.0"
+    "ajv": "8.20.0",
+    "@pestouille/engine": "0.1.0"
   }
 }

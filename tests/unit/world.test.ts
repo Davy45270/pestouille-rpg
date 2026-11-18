@@ -12,12 +12,12 @@ describe('graphe de la première flamme', () => {
     });
     it('T12 clé obtenue : antichambre accessible', () => {
         expect(reachable(g, g.start, ['party_four'])).not.toContain('temple.antechamber');
-        expect(reachable(g, g.start, ['party_four', 'root_key'])).toContain('temple.antechamber');
+        expect(reachable(g, g.start, ['party_four', 'blocks_solved', 'switches_solved', 'root_key'])).toContain('temple.antechamber');
     });
     it('T13 et T24 : le solveur atteint le boss, aucune salle critique inaccessible', () => {
         const s = solve(g, g.start);
         expect(s.reached).toContain('temple.boss');
-        expect(s.flags.sort()).toEqual(['party_four', 'root_key']);
+        expect(s.flags.sort()).toEqual(['blocks_solved', 'party_four', 'root_key', 'switches_solved']);
         expect(validateWorld(g)).toEqual([]);
     });
     it('graphe piégé : clé introuvable, nœud inconnu', () => {
@@ -35,5 +35,11 @@ describe('graphe de la première flamme', () => {
 
 it('le temple suit ses transitions : pas de raccourci vers le boss sans la clé', () => {
     expect(reachable(g, g.start, ['party_four'])).not.toContain('temple.boss');
-    expect(reachable(g, g.start, ['party_four'])).toContain('temple.key');
+    expect(reachable(g, g.start, ['party_four', 'blocks_solved', 'switches_solved'])).toContain('temple.key');
+});
+
+it('énigmes du temple : interrupteurs fermés avant les blocs, clé fermée avant les interrupteurs', () => {
+    expect(reachable(g, g.start, ['party_four'])).toContain('temple.blocks');
+    expect(reachable(g, g.start, ['party_four'])).not.toContain('temple.switches');
+    expect(reachable(g, g.start, ['party_four', 'blocks_solved'])).not.toContain('temple.key');
 });

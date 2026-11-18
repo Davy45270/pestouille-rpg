@@ -23,6 +23,10 @@ function neighbours(g: WorldGraph, node: string): string[] {
     return [...same, ...links].filter(n => n !== node);
 }
 
+/** Lieux voisins où l'on peut entrer avec ces drapeaux, triés. */
+export const exits = (g: WorldGraph, node: string, flags: readonly string[]): string[] =>
+    [...new Set(neighbours(g, node))].filter(n => canEnter(g, n, flags)).sort();
+
 export function reachable(g: WorldGraph, start: string, flags: readonly string[]): string[] {
     const seen = new Set([start]);
     const queue = [start];

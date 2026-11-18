@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "first_flame",
+  "quest": "first_flame",
+  "world": "first_flame",
+  "boss": "roncier",
+  "bossStats": { "hp": 420, "mp": 99, "attack": 30, "defense": 18, "magic": 26, "resistance": 16, "speed": 9, "luck": 5 },
+  "summons": { "summon_sprout": { "creatureId": "mossling", "level": 2 } },
+  "heroes": {
+    "pestouille": { "name": "Pestouille", "job": "dragon", "level": 5, "element": "fire", "baseStats": { "hp": 60, "mp": 20, "attack": 18, "defense": 12, "magic": 16, "resistance": 10, "speed": 13, "luck": 8 } },
+    "lila": { "name": "Lila", "job": "mage", "level": 4, "element": "light", "baseStats": { "hp": 40, "mp": 30, "attack": 9, "defense": 8, "magic": 18, "resistance": 14, "speed": 12, "luck": 9 } },
+    "borin": { "name": "Borin", "job": "guardian", "level": 4, "element": "earth", "baseStats": { "hp": 70, "mp": 8, "attack": 16, "defense": 18, "magic": 6, "resistance": 10, "speed": 7, "luck": 6 } },
+    "nox": { "name": "Nox", "job": "scout", "level": 4, "element": "wind", "baseStats": { "hp": 45, "mp": 12, "attack": 17, "defense": 9, "magic": 8, "resistance": 9, "speed": 17, "luck": 12 } }
+  },
+  "startParty": ["pestouille"],
+  "partyFlag": { "flag": "party_four", "members": ["pestouille", "lila", "borin", "nox"] },
+  "nodes": {
+    "village.place": { "name": "Place du village", "event": { "kind": "talk", "speaker": "Églantine", "lines": ["Pestouille ! Le Roncier étouffe le temple de la forêt.", "Réunis Lila, Borin et Nox, puis rapporte la première flamme."] } },
+    "village.home": { "name": "Maison de Nox", "event": { "kind": "join", "hero": "nox", "step": "meet_nox", "lines": ["Nox : Je connais les sentiers. Je viens !"] } },
+    "village.clinic": { "name": "Dispensaire", "event": { "kind": "rest", "lines": ["Le groupe se repose. PV et PM rendus."] } },
+    "village.forge": { "name": "Forge", "event": { "kind": "join", "hero": "borin", "step": "meet_borin", "lines": ["Borin : Mon bouclier est prêt."] } },
+    "village.inn": { "name": "Auberge", "event": { "kind": "join", "hero": "lila", "step": "meet_lila", "lines": ["Lila : Mes sorts soignent les blessures. Je t'accompagne."] } },
+    "village.forest_gate": { "name": "Porte de la forêt" },
+    "forest.entry": { "name": "Orée", "event": { "kind": "battle", "encounter": "forest_intro", "tutorialRecruit": true, "lines": ["Un Moussin hésite… Apaise-le pour qu'il rejoigne la réserve."] } },
+    "forest.glade": { "name": "Clairière", "event": { "kind": "battle", "encounter": "forest_glade" } },
+    "forest.spring": { "name": "Source", "event": { "kind": "battle", "encounter": "forest_spring" } },
+    "forest.camp": { "name": "Campement", "event": { "kind": "rest", "lines": ["Feu de camp : PV et PM rendus. Point de reprise."] } },
+    "forest.temple_gate": { "name": "Porte du temple", "event": { "kind": "talk", "speaker": "Pestouille", "lines": ["La porte ne s'ouvre qu'à un groupe de quatre."] } },
+    "temple.hall": { "name": "Grand hall" },
+    "temple.blocks": { "name": "Salle des blocs", "event": { "kind": "puzzle", "puzzle": "blocks", "step": "solve_blocks", "flag": "blocks_solved", "lines": ["Pousse le bloc sur la dalle."] } },
+    "temple.switches": { "name": "Salle des interrupteurs", "event": { "kind": "puzzle", "puzzle": "switches", "step": "solve_switches", "flag": "switches_solved", "lines": ["Allume les quatre lanternes. Chacune bascule aussi ses voisines."] } },
+    "temple.key": { "name": "Salle de la clé", "event": { "kind": "chest", "item": "root_key", "flag": "root_key", "step": "find_root_key", "lines": ["Un coffre : la clé de racine !"] } },
+    "temple.antechamber": { "name": "Antichambre", "event": { "kind": "rest", "lines": ["Une source de lumière. Point de reprise."] } },
+    "temple.boss": { "name": "Cœur du temple", "event": { "kind": "boss", "step": "defeat_roncier", "then": "claim_first_flame", "lines": ["Le Roncier se dresse ! Attention à la tempête de ronces annoncée."] } }
+  }
+}

@@ -64,6 +64,14 @@
     {
       "target": "temple.antechamber",
       "requires": "root_key"
+    },
+    {
+      "target": "temple.switches",
+      "requires": "blocks_solved"
+    },
+    {
+      "target": "temple.key",
+      "requires": "switches_solved"
     }
   ],
   "checkpoints": [
@@ -74,6 +82,8 @@
   "start": "village.place",
   "grants": {
     "village.place": "party_four",
-    "temple.key": "root_key"
+    "temple.key": "root_key",
+    "temple.blocks": "blocks_solved",
+    "temple.switches": "switches_solved"
   }
 }
