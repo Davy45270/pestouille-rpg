@@ -29,6 +29,6 @@ steps:
   - name: sbom et audit
     image: *node
     commands:
-      - npm run sbom > sbom.cdx.json
+      - npm run --silent sbom > sbom.cdx.json
       - node -e 'const s=require("./sbom.cdx.json"); if (s.bomFormat !== "CycloneDX") process.exit(1); console.log("SBOM CycloneDX", s.specVersion, (s.components || []).length, "composants")'
       - npm audit --audit-level=high
