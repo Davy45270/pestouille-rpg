@@ -1,0 +1,34 @@
+# Repris d'echecs-kid (.woodpecker/checks.yml) ; pas encore de build web : le premier jalon est le moteur.
+labels:
+  host: tank01
+
+when:
+  - event: push
+    branch: main
+  - event: [pull_request, manual]
+
+steps:
+  - name: npm ci
+    image: &node harbor.pingfr.duckdns.org/dockerhub/library/node:26
+    pull: true
+    commands:
+      - node --version
+      - npm ci
+  - name: lint
+    image: *node
+    commands:
+      - npm run lint
+  - name: typecheck
+    image: *node
+    commands:
+      - npm run typecheck
+  - name: test
+    image: *node
+    commands:
+      - npm test
+  - name: sbom et audit
+    image: *node
+    commands:
+      - npm run sbom > sbom.cdx.json
+      - node -e 'const s=require("./sbom.cdx.json"); if (s.bomFormat !== "CycloneDX") process.exit(1); console.log("SBOM CycloneDX", s.specVersion, (s.components || []).length, "composants")'
+      - npm audit --audit-level=high

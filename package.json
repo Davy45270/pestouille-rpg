@@ -1,0 +1,29 @@
+{
+  "name": "pestouille-rpg",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pestouille RPG — Les Chroniques des Sept Flammes : un RPG au tour par tour, moteur pur et déterministe.",
+  "license": "MIT",
+  "author": "David Sevin",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --max-warnings=0",
+    "test": "vitest run --pool=threads --maxWorkers=2",
+    "sbom": "npm sbom --sbom-format cyclonedx --omit dev"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "fast-check": "4.10.3",
+    "oxlint": "1.92.0",
+    "oxlint-tsgolint": "7.0.2006",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0"
+  }
+}
