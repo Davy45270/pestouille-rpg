@@ -1,0 +1,18 @@
+{
+  "id": "healer",
+  "name": "Guérisseur",
+  "skills": [
+    "basic_attack",
+    "heal"
+  ],
+  "growth": {
+    "hp": 4,
+    "mp": 4,
+    "attack": 1,
+    "defense": 2,
+    "magic": 3,
+    "resistance": 4,
+    "speed": 2,
+    "luck": 1
+  }
+}

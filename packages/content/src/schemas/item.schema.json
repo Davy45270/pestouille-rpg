@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "kind",
+    "price",
+    "stackMax"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{2,63}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "consumable",
+        "equipment",
+        "material",
+        "quest",
+        "recruitment"
+      ]
+    },
+    "price": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stackMax": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "heal": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

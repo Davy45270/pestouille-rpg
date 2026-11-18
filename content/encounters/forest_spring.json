@@ -1,0 +1,19 @@
+{
+  "id": "forest_spring",
+  "regionId": "foret_murmures",
+  "enemies": [
+    {
+      "creatureId": "mossling",
+      "level": 4
+    },
+    {
+      "creatureId": "dewdrop",
+      "level": 4
+    }
+  ],
+  "rewards": {
+    "xp": 45,
+    "gold": 16
+  },
+  "boss": false
+}

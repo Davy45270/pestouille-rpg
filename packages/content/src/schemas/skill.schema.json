@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "skill",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "mpCost",
+    "power",
+    "kind",
+    "element",
+    "target"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{2,63}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mpCost": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "power": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "kind": {
+      "enum": [
+        "damage",
+        "heal",
+        "summon"
+      ]
+    },
+    "element": {
+      "enum": [
+        "neutral",
+        "fire",
+        "water",
+        "earth",
+        "wind",
+        "ice",
+        "light",
+        "shadow"
+      ]
+    },
+    "target": {
+      "enum": [
+        "enemy",
+        "ally"
+      ]
+    }
+  }
+}

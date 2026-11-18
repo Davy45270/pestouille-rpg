@@ -1,0 +1,24 @@
+{
+  "id": "nightmoth",
+  "name": "Noctillon",
+  "element": "shadow",
+  "recruitable": true,
+  "baseChance": 20,
+  "baseStats": {
+    "hp": 60,
+    "mp": 10,
+    "attack": 22,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": [
+    {
+      "targetId": "moonmoth",
+      "minLevel": 17,
+      "minAffinity": 55
+    }
+  ]
+}

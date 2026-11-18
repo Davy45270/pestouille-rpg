@@ -1,0 +1,18 @@
+{
+  "id": "prismite",
+  "name": "Prismite",
+  "element": "ice",
+  "recruitable": false,
+  "baseChance": 0,
+  "baseStats": {
+    "hp": 55,
+    "mp": 10,
+    "attack": 20,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": []
+}

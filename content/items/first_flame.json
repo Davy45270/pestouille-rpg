@@ -1,0 +1,7 @@
+{
+  "id": "first_flame",
+  "name": "Première flamme",
+  "kind": "quest",
+  "price": 0,
+  "stackMax": 1
+}

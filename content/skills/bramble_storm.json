@@ -1,0 +1,9 @@
+{
+  "id": "bramble_storm",
+  "name": "Tempête de ronces",
+  "mpCost": 0,
+  "power": 140,
+  "kind": "damage",
+  "element": "earth",
+  "target": "enemy"
+}

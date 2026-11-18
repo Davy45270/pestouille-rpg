@@ -1,0 +1,9 @@
+{
+  "id": "aimed_shot",
+  "name": "Tir précis",
+  "mpCost": 3,
+  "power": 125,
+  "kind": "damage",
+  "element": "neutral",
+  "target": "enemy"
+}

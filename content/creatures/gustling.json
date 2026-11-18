@@ -1,0 +1,24 @@
+{
+  "id": "gustling",
+  "name": "Soufflin",
+  "element": "wind",
+  "recruitable": true,
+  "baseChance": 35,
+  "baseStats": {
+    "hp": 50,
+    "mp": 10,
+    "attack": 18,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": [
+    {
+      "targetId": "stormwing",
+      "minLevel": 15,
+      "minAffinity": 55
+    }
+  ]
+}

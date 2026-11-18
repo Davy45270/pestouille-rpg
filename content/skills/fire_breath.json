@@ -1,0 +1,9 @@
+{
+  "id": "fire_breath",
+  "name": "Souffle de feu",
+  "mpCost": 5,
+  "power": 120,
+  "kind": "damage",
+  "element": "fire",
+  "target": "enemy"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "forest_intro",
+  "regionId": "foret_murmures",
+  "enemies": [
+    {
+      "creatureId": "mossling",
+      "level": 3
+    },
+    {
+      "creatureId": "flameling",
+      "level": 3
+    }
+  ],
+  "rewards": {
+    "xp": 35,
+    "gold": 12
+  },
+  "boss": false
+}

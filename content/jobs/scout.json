@@ -1,0 +1,18 @@
+{
+  "id": "scout",
+  "name": "Éclaireur",
+  "skills": [
+    "basic_attack",
+    "aimed_shot"
+  ],
+  "growth": {
+    "hp": 4,
+    "mp": 2,
+    "attack": 3,
+    "defense": 2,
+    "magic": 1,
+    "resistance": 2,
+    "speed": 4,
+    "luck": 2
+  }
+}

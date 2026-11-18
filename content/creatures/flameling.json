@@ -1,0 +1,24 @@
+{
+  "id": "flameling",
+  "name": "Flammèche",
+  "element": "fire",
+  "recruitable": true,
+  "baseChance": 30,
+  "baseStats": {
+    "hp": 35,
+    "mp": 10,
+    "attack": 12,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": [
+    {
+      "targetId": "emberdrake",
+      "minLevel": 12,
+      "minAffinity": 55
+    }
+  ]
+}

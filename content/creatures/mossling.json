@@ -1,0 +1,24 @@
+{
+  "id": "mossling",
+  "name": "Moussin",
+  "element": "earth",
+  "recruitable": true,
+  "baseChance": 40,
+  "baseStats": {
+    "hp": 40,
+    "mp": 10,
+    "attack": 14,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": [
+    {
+      "targetId": "groveguard",
+      "minLevel": 13,
+      "minAffinity": 55
+    }
+  ]
+}

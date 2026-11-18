@@ -1,0 +1,24 @@
+{
+  "id": "crystalimp",
+  "name": "Cristalin",
+  "element": "ice",
+  "recruitable": true,
+  "baseChance": 25,
+  "baseStats": {
+    "hp": 55,
+    "mp": 10,
+    "attack": 20,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": [
+    {
+      "targetId": "prismite",
+      "minLevel": 16,
+      "minAffinity": 55
+    }
+  ]
+}

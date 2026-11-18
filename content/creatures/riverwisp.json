@@ -1,0 +1,18 @@
+{
+  "id": "riverwisp",
+  "name": "Ruisselin",
+  "element": "water",
+  "recruitable": false,
+  "baseChance": 0,
+  "baseStats": {
+    "hp": 45,
+    "mp": 10,
+    "attack": 16,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": []
+}

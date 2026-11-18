@@ -1,0 +1,9 @@
+{
+  "id": "thorn_strike",
+  "name": "Frappe de ronces",
+  "mpCost": 0,
+  "power": 110,
+  "kind": "damage",
+  "element": "earth",
+  "target": "enemy"
+}

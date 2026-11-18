@@ -1,0 +1,8 @@
+{
+  "id": "healing_herb",
+  "name": "Herbe soignante",
+  "kind": "consumable",
+  "price": 15,
+  "stackMax": 99,
+  "heal": 30
+}

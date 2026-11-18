@@ -1,0 +1,24 @@
+{
+  "id": "dewdrop",
+  "name": "Gouttine",
+  "element": "water",
+  "recruitable": true,
+  "baseChance": 45,
+  "baseStats": {
+    "hp": 45,
+    "mp": 10,
+    "attack": 16,
+    "defense": 10,
+    "magic": 12,
+    "resistance": 10,
+    "speed": 12,
+    "luck": 8
+  },
+  "evolutions": [
+    {
+      "targetId": "riverwisp",
+      "minLevel": 14,
+      "minAffinity": 55
+    }
+  ]
+}

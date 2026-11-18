@@ -1,0 +1,7 @@
+{
+  "id": "root_key",
+  "name": "Clé des racines",
+  "kind": "quest",
+  "price": 0,
+  "stackMax": 1
+}

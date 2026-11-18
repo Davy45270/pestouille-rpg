@@ -1,0 +1,9 @@
+{
+  "id": "shield_bash",
+  "name": "Coup de bouclier",
+  "mpCost": 3,
+  "power": 110,
+  "kind": "damage",
+  "element": "neutral",
+  "target": "enemy"
+}

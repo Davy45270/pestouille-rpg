@@ -1,0 +1,19 @@
+{
+  "id": "dragon",
+  "name": "Dragon",
+  "skills": [
+    "basic_attack",
+    "fire_breath",
+    "dragon_claw"
+  ],
+  "growth": {
+    "hp": 5,
+    "mp": 2,
+    "attack": 3,
+    "defense": 2,
+    "magic": 3,
+    "resistance": 2,
+    "speed": 2,
+    "luck": 1
+  }
+}

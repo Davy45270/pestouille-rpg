@@ -1,0 +1,19 @@
+{
+  "id": "mage",
+  "name": "Mage",
+  "skills": [
+    "basic_attack",
+    "spark",
+    "heal"
+  ],
+  "growth": {
+    "hp": 3,
+    "mp": 4,
+    "attack": 1,
+    "defense": 1,
+    "magic": 4,
+    "resistance": 3,
+    "speed": 2,
+    "luck": 1
+  }
+}

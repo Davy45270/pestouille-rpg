@@ -1,0 +1,9 @@
+{
+  "id": "basic_attack",
+  "name": "Attaque",
+  "mpCost": 0,
+  "power": 100,
+  "kind": "damage",
+  "element": "neutral",
+  "target": "enemy"
+}

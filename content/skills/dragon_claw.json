@@ -1,0 +1,9 @@
+{
+  "id": "dragon_claw",
+  "name": "Griffe draconique",
+  "mpCost": 3,
+  "power": 130,
+  "kind": "damage",
+  "element": "neutral",
+  "target": "enemy"
+}

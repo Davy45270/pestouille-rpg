@@ -1,0 +1,9 @@
+{
+  "id": "spark",
+  "name": "Étincelle",
+  "mpCost": 3,
+  "power": 100,
+  "kind": "damage",
+  "element": "light",
+  "target": "enemy"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "summon_sprout",
+  "name": "Rejeton",
+  "mpCost": 0,
+  "power": 0,
+  "kind": "summon",
+  "element": "earth",
+  "target": "enemy"
+}

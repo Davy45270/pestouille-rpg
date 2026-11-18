@@ -1,0 +1,19 @@
+{
+  "id": "forest_glade",
+  "regionId": "foret_murmures",
+  "enemies": [
+    {
+      "creatureId": "dewdrop",
+      "level": 3
+    },
+    {
+      "creatureId": "gustling",
+      "level": 4
+    }
+  ],
+  "rewards": {
+    "xp": 40,
+    "gold": 14
+  },
+  "boss": false
+}

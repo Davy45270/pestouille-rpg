@@ -1,0 +1,9 @@
+{
+  "id": "heal",
+  "name": "Soin",
+  "mpCost": 4,
+  "power": 40,
+  "kind": "heal",
+  "element": "light",
+  "target": "ally"
+}
