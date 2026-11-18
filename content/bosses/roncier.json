@@ -1,0 +1,1 @@
+{"schemaVersion":1,"id":"roncier","recruitable":false,"hp":420,"phases":[{"id":"A","hpAbovePercent":65,"skills":["thorn_strike"]},{"id":"B","hpAbovePercent":30,"skills":["thorn_strike","summon_sprout"]},{"id":"C","hpAbovePercent":0,"skills":["thorn_strike","bramble_storm"],"fireDamagePercent":150}],"rewards":{"xp":180,"items":["first_flame"]}}

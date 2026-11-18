@@ -10,11 +10,16 @@ export function physicalDamage(attack: number, defense: number, power: number): 
 
 export interface NewBattle { seed: string; units: Unit[]; inventory?: Record<string, number>; tutorialRecruitDone?: boolean }
 
+function initialPhase(units: Unit[]): Battle['bossPhase'] {
+    const boss = units.find(u => u.boss && u.team === 'enemy');
+    return boss ? bossPhaseFor(boss.hp, boss.stats.hp, null) : null;
+}
+
 export function createBattle(init: NewBattle): Battle {
     return {
         round: 1, rng: seedRng(init.seed), units: structuredClone(init.units), inventory: { ...init.inventory },
         outcome: 'ongoing', defending: [], tutorialRecruitDone: init.tutorialRecruitDone ?? false,
-        recruited: [], recruitCount: 0, bossPhase: init.units.some(u => u.boss && u.team === 'enemy') ? 'A' : null
+        recruited: [], recruitCount: 0, bossPhase: initialPhase(init.units)
     };
 }
 
