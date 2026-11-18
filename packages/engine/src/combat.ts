@@ -19,7 +19,7 @@ export function createBattle(init: NewBattle): Battle {
     return {
         round: 1, rng: seedRng(init.seed), units: structuredClone(init.units), inventory: { ...init.inventory },
         outcome: 'ongoing', defending: [], tutorialRecruitDone: init.tutorialRecruitDone ?? false,
-        recruited: [], recruitCount: 0, bossPhase: initialPhase(init.units)
+        recruited: [], recruitCount: 0, bossPhase: initialPhase(init.units), summonCount: 0, telegraph: null
     };
 }
 
@@ -64,12 +64,33 @@ function act(b: Battle, cmd: Command, rules: Rules, events: BattleEvent[]): void
             const raw = physicalDamage(actor.stats.attack, target.stats.defense, 100);
             return hit(b, target, Math.floor(raw * phaseMultiplier(target, b.bossPhase, 'neutral') / 100), events, actor.id);
         }
+        case 'telegraph':
+            b.telegraph = { actorId: actor.id, skillId: cmd.skillId };
+            events.push({ type: 'telegraph', actorId: actor.id, reason: cmd.skillId });
+            return;
         case 'skill': {
             const skill = rules.skills[cmd.skillId];
             if (!skill) return reject('unknown_skill');
             if (actor.mp < skill.mpCost) return reject('no_mp');
+            if (skill.target === 'all_enemies') {
+                actor.mp -= skill.mpCost;
+                if (b.telegraph?.actorId === actor.id) b.telegraph = null;
+                for (const t of b.units.filter(u => u.team !== actor.team && u.hp > 0)) {
+                    hit(b, t, physicalDamage(actor.stats.magic, t.stats.resistance, skill.power), events, actor.id);
+                }
+                return;
+            }
             if (!alive(target)) return cancel();
             actor.mp -= skill.mpCost;
+            if (skill.kind === 'summon') {
+                const template = rules.summons?.[skill.id];
+                if (!template) return reject('unknown_summon');
+                b.summonCount += 1;
+                const id = `${template.id}#${b.summonCount}`;
+                b.units.push({ ...structuredClone(template), id, team: actor.team });
+                events.push({ type: 'summon', actorId: actor.id, targetId: id });
+                return;
+            }
             if (skill.kind === 'heal') return heal(target, skill.power, events, actor.id);
             const raw = skill.element === 'neutral'
                 ? physicalDamage(actor.stats.attack, target.stats.defense, skill.power)

@@ -5,5 +5,5 @@
   "power": 140,
   "kind": "damage",
   "element": "earth",
-  "target": "enemy"
+  "target": "all_enemies"
 }

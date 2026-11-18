@@ -8,3 +8,4 @@ export * from './quests.ts';
 export * from './world.ts';
 export * from './progression.ts';
 export * from './inventory.ts';
+export * from './ai.ts';

@@ -51,7 +51,8 @@
     "target": {
       "enum": [
         "enemy",
-        "ally"
+        "ally",
+        "all_enemies"
       ]
     }
   }
